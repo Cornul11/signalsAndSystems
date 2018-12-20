@@ -1,0 +1,12 @@
+#cmake helper files
+cmake-build-debug/
+CMakeLists.txt
+
+#input files
+*.in
+
+#executables
+*.out
+
+#idea files
+.idea/
