@@ -39,7 +39,7 @@ void printIntArray(int length, int *arr) {
 }
 
 int main(int argc, char *argv[]) {
-    int samplingRate, n = 2;
+    int samplingRate, n = 2, flag = 1;
     double *amp, *f, *phi;
     amp = makeDoubleArray(n);
     f = makeDoubleArray(n);
@@ -54,13 +54,14 @@ int main(int argc, char *argv[]) {
     double **samples = safeMalloc(n * sizeof(double *));
     samples[0] = safeMalloc(50 * sizeof(double));
     samples[1] = safeMalloc(50 * sizeof(double));
+
     for (int i = 0; i < 50; i++) {
-        samples[0][i] = trunc(amp[0] * cos(2.00 * pi * f[0] * t * i) + phi[0]);
+        samples[0][i] = trunc(amp[0] * cos(2.00 * pi * f[0] * t * i + phi[0]));
     }
     for (int i = 0; i < 50; i++) {
-        samples[1][i] = trunc(amp[1] * cos(2.00 * pi * f[1] * t * i) + phi[1]);
+        samples[1][i] = trunc(amp[1] * cos(2.00 * pi * f[1] * t * i + phi[1]));
     }
-    int flag = 1;
+
     for (int i = 0; i < 50; i++) {
         if (samples[0][i] != samples[1][i]) {
             flag = 0;
