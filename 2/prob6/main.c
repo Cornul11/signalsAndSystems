@@ -150,8 +150,6 @@ int main() {
     int *h, *x, *y, hLength, xLength, yLength;
     double *pearsonY, T;
 
-    scanf("%lf", &T);
-
     h = inputIntSignal(&hLength);
     x = inputIntSignal(&xLength);
 
