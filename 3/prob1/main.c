@@ -194,7 +194,7 @@ int *oneDConvolution(int *h, int *x, int *k, int n, int m) {
         finalFFT[i] = xFFT[i] * hFFT[i]; //convolution
     }
 
-    *k = n + m - 1;
+    *k = m - n + 1;
     y = makeIntArray(*k);
 
     doubleY = FFT(finalFFT, omegaInversed, bigN, true);
