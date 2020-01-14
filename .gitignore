@@ -10,3 +10,6 @@ CMakeLists.txt
 
 #idea files
 .idea/
+
+#pgm files
+*.pgm
